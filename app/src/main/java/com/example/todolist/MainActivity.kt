@@ -10,24 +10,25 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    var todoList: Array<String> = arrayOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater) //
         setContentView(binding.root)
 
+        //validate input and calls addCheckBox function
         binding.addBtn.setOnClickListener(){
             if(binding.itemsInput.text.isNotEmpty()){
-                todoList += binding.itemsInput.text.toString()
                 addCheckBox(binding.itemsInput.text.toString())
-                binding.itemsInput.text.append("")
+                binding.itemsInput.text.clear()
             }else{
                 Toast.makeText(this, "Please add any input.", Toast.LENGTH_SHORT).show()
-            }        }
+            }
+        }
 
     }
 
-    fun addCheckBox(todoData: String){
+    //add check box items to the linear layout
+    private fun addCheckBox(todoData: String){
             val checkBox = CheckBox(this)
             checkBox.text = todoData
             checkBox.isChecked = false
