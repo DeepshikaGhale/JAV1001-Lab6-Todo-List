@@ -10,7 +10,8 @@
     <EditText
         android:id="@+id/itemsInput"
         android:hint="@string/hint"
-
+        android:padding="8dp"
+        android:background="@drawable/border"
         android:layout_width="match_parent"
         android:layout_margin="16dp"
         android:layout_height="wrap_content"/>
@@ -21,5 +22,6 @@
         android:text="@string/btn_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
 
 </LinearLayout>
